@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Video</title>
+</head>
+<style>
+*, html, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    .container {
+        max-width: 50%;
+        margin: 0 auto;
+        position: relative;
+    }
+    
+    video {
+        display: block;
+        width: 100%;
+        border: solid 2px indianred;
+    }
+
+    .video-component {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 10px 15px;
+    }
+
+    .btn {
+        border: none;
+        padding: 10px;
+        font-weight: 800;
+        cursor: pointer;
+        font-size: 24px;
+        border-radius: 10px;
+    }
+
+    .btn-play {
+        background-color: crimson;
+        color: white;
+    }
+    .btn-pause {
+        background-color: white;
+        color: black;        
+    }
+    .btn-minimize {
+        background-color: rgb(0, 0, 0);
+        color: white;
+    }
+    
+
+
+
+</style>
+<body>
+    <div class="container">
+        <video width="720">
+            <source src="./assets/Motion Graphic Iklan Produk _ After Effect.mp4" type="video/mp4" /> 
+        </video>
+        <div class="video-component">
+            <button onclick="play()" class="btn btn-play">mulai</button>
+            <button onclick="pause()" class="btn btn-pause">jeda</button>
+            <button onclick="minimize()" class="btn btn-minimize">layar kecil</button>
+        </div>
+    </div>
+    <div>
+        <a href="https://youtu.be/J12e-1BwbPY?si=JMzVsTrAITgOAshA"><h1>naufalkfajri</h1></a>
+    </div>
+
+
+
+
+    <script>
+        const videoComponent = document.querySelector("video") 
+        function play(){
+            videoComponent.play()  
+        }
+        function pause(){
+            videoComponent.pause()  
+        }
+        function minimize(){
+            videoComponent.requestPictureInPicture()
+        }
+    </script>
+</body>
+</html>
